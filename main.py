@@ -1,7 +1,16 @@
 import discord
 import os
+import random
 
 client = discord.Client()
+
+hi = ["hi","Hi","hoi","Hoi","hello","Hello"]
+
+call_words = ["manda","Manda","Mandan","mandan","mandaa","Mandaa"]
+
+hi_replies = ["Hi mona","Hi gooys sugalle","Hoi"]
+
+reply= ["Entha mona","Yesh","sorry mona","Enthada"]
 
 @client.event
 async def on_ready():
@@ -11,11 +20,13 @@ async def on_ready():
 async def on_message(message):
   if message.author == client.user:
     return
+  
+  msg = message.content
 
-  if message.content.startswith('Hi'):
-    await message.channel.send('Hi')
-    await message.channel.send('Hi')
-    await message.channel.send('Hi gooys sugalle')
-    
+  if any(word in msg for word in hi):
+    await message.channel.send(random.choice(hi_replies))
+
+  if any(word in msg for word in call_words):
+    await message.channel.send(random.choice(reply)) 
 
 client.run(os.getenv('TOKEN'))
