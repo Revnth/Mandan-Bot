@@ -11,7 +11,7 @@ call_words = ["manda","Manda","Mandan","mandan","mandaa","Mandaa"]
 
 hi_replies = ["Hi mona","Hi gooys sugalle","Hoi"]
 
-reply= ["Entha mona","Yesh","sorry mona","Enthada"]
+reply= ["Entha mona","Yesh","sorry mona","Enthada","Aahda","Aah mona"]
 
 @client.event
 async def on_ready():
